@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { 
-  Building2, 
-  RefreshCw, 
-  FileText, 
-  TrendingUp, 
-  CheckCircle2, 
+import {
+  Building2,
+  RefreshCw,
+  FileText,
+  TrendingUp,
+  CheckCircle2,
   Clock,
   Shield,
   Lightbulb,
@@ -87,7 +87,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section 
+      <section
         className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden"
         style={{
           backgroundImage: `linear-gradient(135deg, rgba(255, 96, 55, 0.95), rgba(13, 39, 80, 0.95)), url(${heroBackground})`,
@@ -105,8 +105,8 @@ const Home = () => {
               Descubra por que empresas em todo o Brasil confiam na Cyrino Contabilidade para aumentar sua lucratividade e competitividade no mercado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all"
                 asChild
               >
@@ -114,9 +114,9 @@ const Home = () => {
                   Fale Conosco
                 </a>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold text-lg px-8 py-6"
                 asChild
               >
@@ -127,7 +127,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
@@ -147,8 +147,8 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -162,7 +162,7 @@ const Home = () => {
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {service.description}
                   </p>
-                  <Link 
+                  <Link
                     to={service.link}
                     className="inline-flex items-center gap-2 text-primary font-medium hover:gap-3 transition-all"
                   >
@@ -189,8 +189,8 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {differentials.map((item, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="text-center animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -214,20 +214,20 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <img 
-                src={partnershipImage} 
-                alt="Parceria de confiança" 
+              <img
+                src={partnershipImage}
+                alt="Parceria de confiança"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>
             <div className="order-1 lg:order-2">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-foreground text-center">
                 Conte com quem entende do seu negócio
               </h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed text-justify">
                 Com anos de experiência no mercado, a Cyrino Contabilidade oferece serviços personalizados que atendem às necessidades específicas de cada cliente.
               </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed text-justify">
                 Nossa missão é simplificar a gestão contábil e fiscal do seu negócio, permitindo que você foque no que realmente importa: o crescimento da sua empresa.
               </p>
               <Button size="lg" asChild>
@@ -254,8 +254,8 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="bg-white animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -283,8 +283,8 @@ const Home = () => {
           <p className="text-lg mb-8 opacity-95 max-w-2xl mx-auto">
             Entre em contato agora e descubra como podemos ajudar seu negócio a crescer
           </p>
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-6 shadow-xl"
             asChild
           >

@@ -58,18 +58,21 @@ const Sobre = () => {
       {/* History Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
+          <div className="flex w-full justify-center align-center mb-8">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-foreground">
+              Nossa História
+            </h2>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 lg:order-1">
-              <img 
-                src={teamMeeting} 
-                alt="Equipe Cyrino Contabilidade" 
+              <img
+                src={teamMeeting}
+                alt="Equipe Cyrino Contabilidade"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
             </div>
+
             <div className="order-1 lg:order-2">
-              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-foreground">
-                Nossa História
-              </h2>
               <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
                 <p>
                   A Cyrino Contabilidade nasceu da visão de transformar a contabilidade tradicional em um serviço estratégico e acessível para empresas de todos os portes.
@@ -128,8 +131,8 @@ const Sobre = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {values.map((value, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border hover:border-primary transition-all animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
@@ -163,9 +166,9 @@ const Sobre = () => {
             <Card className="overflow-hidden hover:shadow-2xl transition-all">
               <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
                 <div className="md:col-span-2 bg-gradient-to-br from-primary to-secondary p-8 flex items-center justify-center">
-                  <img 
-                    src={rodrigoCyrino} 
-                    alt="Rodrigo Cyrino Ribeiro" 
+                  <img
+                    src={rodrigoCyrino}
+                    alt="Rodrigo Cyrino Ribeiro"
                     className="rounded-full w-48 h-48 object-cover border-4 border-white shadow-xl"
                   />
                 </div>
@@ -200,8 +203,8 @@ const Sobre = () => {
               Entre em contato e descubra como a Cyrino Contabilidade pode transformar a gestão do seu negócio.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-primary hover:bg-primary/90 font-semibold text-lg px-8 py-6"
                 asChild
               >
@@ -209,10 +212,10 @@ const Sobre = () => {
                   Fale Conosco
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-secondary font-semibold text-lg px-8 py-6"
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary-foreground text-secondary hover:bg-primary-foreground hover:text-primary font-semibold text-lg px-8 py-6"
                 asChild
               >
                 <Link to="/solucoes">

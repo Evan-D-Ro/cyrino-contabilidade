@@ -74,8 +74,8 @@ const Conteudos = () => {
               {blogPosts.slice(1).map((post, index) => {
                 const PostIcon = post.icon;
                 return (
-                  <Card 
-                    key={index} 
+                  <Card
+                    key={index}
                     className="group hover:shadow-xl transition-all duration-300 border hover:border-primary overflow-hidden animate-fade-in"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
@@ -120,7 +120,7 @@ const Conteudos = () => {
         </div>
       </section>
 
-      {/* Newsletter Section */}
+      {/* Lead Capture Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <Card className="max-w-3xl mx-auto border-2 border-primary">
@@ -130,24 +130,61 @@ const Conteudos = () => {
                   <FileText className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <h2 className="font-heading text-2xl md:text-3xl font-bold mb-3 text-foreground">
-                  Receba Conteúdos Exclusivos
+                  Receba um E-book Exclusivo
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Assine nossa newsletter e receba dicas, novidades e orientações contábeis diretamente no seu e-mail.
+                  Preencha o formulário abaixo e receba gratuitamente em seu e-mail nosso e-book com dicas contábeis exclusivas para o seu negócio.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input 
-                  type="email" 
-                  placeholder="Seu melhor e-mail"
-                  className="flex-1 px-4 py-3 rounded-lg border border-input focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-                <Button size="lg" className="whitespace-nowrap">
-                  Inscrever-se
+
+              <form className="flex flex-col gap-4 max-w-md mx-auto text-left">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    Nome
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Seu nome completo"
+                    className="w-full px-4 py-3 rounded-lg border border-input focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    E-mail
+                  </label>
+                  <input
+                    type="email"
+                    placeholder="Seu melhor e-mail"
+                    className="w-full px-4 py-3 rounded-lg border border-input focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    Telefone
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="(00) 00000-0000"
+                    className="w-full px-4 py-3 rounded-lg border border-input focus:outline-none focus:ring-2 focus:ring-primary"
+                    required
+                  />
+                </div>
+
+                <Button
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90 font-semibold text-lg mt-4"
+                  type="submit"
+                >
+                  Receber E-book
                 </Button>
-              </div>
-              <p className="text-xs text-muted-foreground mt-4">
-                Seus dados estão seguros. Não enviamos spam.
+              </form>
+
+              <p className="text-xs text-muted-foreground mt-4 text-center">
+                Seus dados estão seguros. O e-book será enviado automaticamente para o e-mail informado.
               </p>
             </CardContent>
           </Card>
@@ -164,8 +201,8 @@ const Conteudos = () => {
             <p className="text-lg mb-8 opacity-90 leading-relaxed">
               Nossos contadores estão prontos para oferecer soluções personalizadas para o seu negócio.
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-primary hover:bg-primary/90 font-semibold text-lg px-8 py-6"
               asChild
             >
