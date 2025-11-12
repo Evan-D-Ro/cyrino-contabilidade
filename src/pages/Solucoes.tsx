@@ -1,12 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { 
-  RefreshCw, 
-  FileText, 
-  Calculator, 
-  TrendingUp, 
-  Shield, 
+import {
+  RefreshCw,
+  FileText,
+  Calculator,
+  TrendingUp,
+  Shield,
   Users,
   CheckCircle2,
   ArrowUpRight,
@@ -135,8 +135,8 @@ const Solucoes = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {solutions.map((solution, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="group hover:shadow-2xl transition-all duration-300 border-2 hover:border-primary overflow-hidden animate-fade-in"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
@@ -165,7 +165,7 @@ const Solucoes = () => {
                     ))}
                   </div>
 
-                  <Button 
+                  <Button
                     className="w-full group/btn"
                     asChild
                   >
@@ -182,7 +182,7 @@ const Solucoes = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-muted border-b-4 border-primary">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6 text-foreground">
@@ -197,9 +197,9 @@ const Solucoes = () => {
                   Solicitar Orçamento Personalizado
                 </Link>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold"
                 asChild
               >

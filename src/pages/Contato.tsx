@@ -270,7 +270,7 @@ const Contato = () => {
       </section>
 
       {/* Company Info Section */}
-      <section className="py-12 bg-secondary text-secondary-foreground">
+      <section className="py-12 bg-secondary text-secondary-foreground border-b-4 border-primary">
         <div className="container mx-auto px-4">
           <Card className="max-w-4xl mx-auto bg-white">
             <CardContent className="p-8">

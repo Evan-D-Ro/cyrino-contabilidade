@@ -193,7 +193,7 @@ const Sobre = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-secondary text-secondary-foreground">
+      <section className="py-20 bg-secondary text-secondary-foreground border-b-4 border-primary">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">

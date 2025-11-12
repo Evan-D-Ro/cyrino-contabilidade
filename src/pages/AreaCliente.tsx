@@ -32,14 +32,14 @@ const AreaCliente = () => {
                 <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                   Nossa plataforma exclusiva permite que você acesse todos os documentos e serviços contábeis em um só lugar, com total segurança e praticidade.
                 </p>
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="font-semibold text-lg px-8 py-6"
                   asChild
                 >
-                  <a 
-                    href="https://portal.cyrinocontabilidade.com.br" 
-                    target="_blank" 
+                  <a
+                    href="https://drive.cyrinocontabilidade.com.br/index.php/login"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     Acessar Portal do Cliente
@@ -89,8 +89,8 @@ const AreaCliente = () => {
                     description: "Tire dúvidas direto com nossa equipe"
                   }
                 ].map((feature, index) => (
-                  <Card 
-                    key={index} 
+                  <Card
+                    key={index}
                     className="hover:shadow-xl transition-all duration-300 animate-fade-in"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >

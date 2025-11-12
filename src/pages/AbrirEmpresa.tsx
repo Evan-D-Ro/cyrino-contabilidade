@@ -226,7 +226,7 @@ const AbrirEmpresa = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-secondary text-secondary-foreground">
+      <section className="py-20 bg-secondary text-secondary-foreground border-b-4 border-primary">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <Clock className="h-16 w-16 mx-auto mb-6 opacity-90" />
