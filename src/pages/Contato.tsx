@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   MapPin,
   Phone,
@@ -67,7 +68,7 @@ const Contato = () => {
     {
       icon: Clock,
       title: "Horário de Atendimento",
-      content: "Segunda a Sexta\n8h às 17h",
+      content: "Segunda-Feira a Sexta-Feira\nManhã: 8h às 11h\nTarde: 13h às 17h",
       link: null
     }
   ];
@@ -258,7 +259,7 @@ const Contato = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <MessageCircle className="mr-2 h-5 w-5" />
+                      <FaWhatsapp className="!w-6 !h-6 mr-2" />
                       Abrir WhatsApp
                     </a>
                   </Button>

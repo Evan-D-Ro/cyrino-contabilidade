@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   FileSearch,
   Calculator,
@@ -76,7 +77,8 @@ const AbrirEmpresa = () => {
               className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-6 shadow-xl"
               asChild
             >
-              <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer">
+              <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors">
+                <FaWhatsapp className="!w-6 !h-6" />
                 Solicitar Abertura de Empresa
               </a>
             </Button>
@@ -242,8 +244,11 @@ const AbrirEmpresa = () => {
                 className="bg-primary hover:bg-primary/90 font-semibold text-lg px-8 py-6"
                 asChild
               >
-                <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer">
-                  Falar com um Contador
+               
+
+                <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer"className="inline-flex items-center gap-2 text-primary transition-colors">
+                <FaWhatsapp className="!w-6 !h-6" />
+                Falar com um Contador
                 </a>
               </Button>
               <Button

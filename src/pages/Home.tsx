@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
+
+
 import {
   Building2,
   RefreshCw,
@@ -119,7 +122,13 @@ const Home = () => {
                 className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-6 shadow-xl hover:shadow-2xl transition-all"
                 asChild
               >
-                <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://wa.me/5518999999999"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
+                >
+                  <FaWhatsapp className="!w-6 !h-6" />
                   Fale Conosco
                 </a>
               </Button>

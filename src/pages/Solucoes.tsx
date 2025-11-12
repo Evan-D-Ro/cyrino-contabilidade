@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 import {
   RefreshCw,
   FileText,
@@ -170,6 +171,7 @@ const Solucoes = () => {
                     asChild
                   >
                     <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer">
+                    <FaWhatsapp className="!w-6 !h-6" />
                       Falar com um Contador
                       <ArrowUpRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </a>
@@ -204,6 +206,7 @@ const Solucoes = () => {
                 asChild
               >
                 <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp className="!w-6 !h-6" />
                   Falar no WhatsApp
                 </a>
               </Button>

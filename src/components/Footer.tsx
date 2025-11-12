@@ -122,8 +122,9 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <Clock size={18} className="flex-shrink-0 mt-0.5 text-primary" />
                 <span className="opacity-90">
-                  Segunda a Sexta<br />
-                  8h às 17h
+                  Segunda-Feira a Sexta-Feira<br />
+                  Manhã: 8h às 11h<br />
+                  Tarde: 13h às 17h
                 </span>
               </li>
             </ul>
@@ -137,7 +138,7 @@ const Footer = () => {
               © {currentYear} Cyrino Contabilidade. Todos os direitos reservados.
             </p>
             <p>
-              CNPJ: 26.700.412/0001-28 | CRC 1SP 289664
+              CNPJ: 26.700.412/0001-28 | CRC 1SP 289664 | CRC 2SP038081
             </p>
           </div>
         </div>
