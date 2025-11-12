@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { 
-  FileSearch, 
-  Calculator, 
-  FileCheck, 
+import {
+  FileSearch,
+  Calculator,
+  FileCheck,
   Headphones,
   CheckCircle2,
   Clock,
@@ -71,8 +71,8 @@ const AbrirEmpresa = () => {
             <p className="text-lg md:text-xl mb-8 opacity-95 leading-relaxed">
               Transforme seu sonho em realidade. Cuidamos de toda a burocracia para você focar no que realmente importa: seu negócio.
             </p>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="bg-white text-primary hover:bg-white/90 font-semibold text-lg px-8 py-6 shadow-xl"
               asChild
             >
@@ -98,8 +98,8 @@ const AbrirEmpresa = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="text-center animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -132,8 +132,8 @@ const AbrirEmpresa = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="hover:shadow-xl transition-all duration-300 animate-fade-in"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
@@ -237,8 +237,8 @@ const AbrirEmpresa = () => {
               Entre em contato agora mesmo e receba uma consultoria gratuita para abertura da sua empresa. Nossa equipe está pronta para ajudar você a dar o primeiro passo rumo ao sucesso!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-primary hover:bg-primary/90 font-semibold text-lg px-8 py-6"
                 asChild
               >
@@ -246,14 +246,14 @@ const AbrirEmpresa = () => {
                   Falar com um Contador
                 </a>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-2 border-primary text-primary hover:text-primary/70 hover:bg-primary/5 font-semibold text-lg px-8 py-6"
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold text-lg px-8 py-6"
                 asChild
               >
                 <Link to="/contato">
-                  Solicitar Orçamento
+                  Solicitar orçamento
                 </Link>
               </Button>
             </div>

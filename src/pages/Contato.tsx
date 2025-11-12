@@ -5,14 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
   Send,
-  MessageCircle 
+  MessageCircle
 } from "lucide-react";
+import whatsapp from "@/assets/WhatsApp.png";
 
 const Contato = () => {
   const [formData, setFormData] = useState({
@@ -92,29 +93,30 @@ const Contato = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {contactInfo.map((info, index) => (
-              <Card 
-                key={index} 
-                className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary animate-fade-in"
+              <Card
+                key={index}
+                className="group hover:shadow-lg transition-all duration-300 border hover:border-primary animate-fade-in h-full"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 p-4 bg-primary/10 rounded-full w-16 h-16 mx-auto flex items-center justify-center group-hover:bg-primary transition-colors">
+                <CardContent className="p-6 flex flex-col items-center text-center h-full">
+                  <div className="mb-4 p-4 bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center group-hover:bg-primary transition-colors">
                     <info.icon className="h-8 w-8 text-primary group-hover:text-primary-foreground transition-colors" />
                   </div>
                   <h3 className="font-heading font-semibold mb-3 text-foreground">
                     {info.title}
                   </h3>
                   {info.link ? (
-                    <a 
+                    <a
                       href={info.link}
-                      target={info.link.startsWith('http') ? '_blank' : undefined}
-                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors whitespace-pre-line"
+                      target={info.link.startsWith("http") ? "_blank" : undefined}
+                      rel={info.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors whitespace-pre-wrap break-words leading-relaxed"
+                      style={{ wordBreak: "break-word" }}
                     >
                       {info.content}
                     </a>
                   ) : (
-                    <p className="text-sm text-muted-foreground whitespace-pre-line">
+                    <p className="text-sm text-muted-foreground whitespace-pre-wrap leading-relaxed">
                       {info.content}
                     </p>
                   )}
@@ -128,9 +130,9 @@ const Contato = () => {
       {/* Form and Map Section */}
       <section className="py-12 pb-20 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto items-start">
             {/* Contact Form */}
-            <Card className="border-2">
+            <Card className="border-2 h-full">
               <CardContent className="p-8">
                 <h2 className="font-heading text-2xl font-bold mb-6 text-foreground">
                   Envie uma Mensagem
@@ -203,8 +205,8 @@ const Contato = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="w-full font-semibold"
                     disabled={isSubmitting}
                   >
@@ -219,43 +221,41 @@ const Contato = () => {
               </CardContent>
             </Card>
 
-            {/* Map and WhatsApp */}
-            <div className="space-y-6">
+            {/* Map and WhatsApp side */}
+            <div className="flex flex-col justify-between h-full gap-6">
               {/* Google Maps */}
-              <Card className="overflow-hidden border-2">
-                <CardContent className="p-0">
-                  <div className="bg-muted h-64 flex items-center justify-center">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.8!2d-50.8934!3d-22.2264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDEzJzM1LjAiUyA1MMKwNTMnMzYuMiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
-                      width="100%"
-                      height="256"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Localização Cyrino Contabilidade"
-                    />
-                  </div>
+              <Card className="overflow-hidden border-2 flex-1">
+                <CardContent className="p-0 h-full">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.8!2d-50.8934!3d-22.2264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDEzJzM1LjAiUyA1MMKwNTMnMzYuMiJX!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localização Cyrino Contabilidade"
+                  />
                 </CardContent>
               </Card>
 
               {/* WhatsApp Card */}
-              <Card className="border-2 border-[#25D366] bg-gradient-to-br from-[#25D366]/10 to-[#128C7E]/10">
-                <CardContent className="p-8 text-center">
-                  <MessageCircle className="h-16 w-16 text-[#25D366] mx-auto mb-4" />
+              <Card className="border-2 border-[#25D366] bg-gradient-to-br from-[#25D366]/10 to-[#128C7E]/10 flex-1 flex items-center">
+                <CardContent className="p-8 text-center w-full">
+                  <img src={whatsapp} className="h-16 w-16 text-[#25D366] mx-auto mb-4" />
                   <h3 className="font-heading text-xl font-bold mb-3 text-foreground">
                     Prefere WhatsApp?
                   </h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">
                     Fale diretamente com nossa equipe através do WhatsApp. Resposta rápida e atendimento personalizado!
                   </p>
-                  <Button 
+                  <Button
                     className="w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold"
                     asChild
                   >
-                    <a 
-                      href="https://wa.me/5518999999999" 
-                      target="_blank" 
+                    <a
+                      href="https://wa.me/5518999999999"
+                      target="_blank"
                       rel="noopener noreferrer"
                     >
                       <MessageCircle className="mr-2 h-5 w-5" />

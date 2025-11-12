@@ -10,10 +10,13 @@ import {
   Clock,
   Shield,
   Lightbulb,
-  ArrowRight
+  ArrowRight,
+  Star,
+  Check
 } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import partnershipImage from "@/assets/partnership-new.jpg";
+import googleBadge from "@/assets/google-review.webp";
 
 const Home = () => {
   const services = [
@@ -70,17 +73,23 @@ const Home = () => {
     {
       name: "João Silva",
       company: "Tech Solutions",
-      text: "A Cyrino transformou a contabilidade da minha empresa. Profissionalismo e atenção aos detalhes incomparáveis."
+      text: "A Cyrino transformou a contabilidade da minha empresa. Profissionalismo e atenção aos detalhes incomparáveis.",
+      rating: 5,
+      date: "há 1 mês"
     },
     {
       name: "Maria Santos",
       company: "Boutique Elegance",
-      text: "Abrir minha empresa foi muito mais fácil do que imaginava. Suporte completo em todas as etapas."
+      text: "Abrir minha empresa foi muito mais fácil do que imaginava. Suporte completo em todas as etapas.",
+      rating: 5,
+      date: "há 3 semanas"
     },
     {
       name: "Carlos Oliveira",
       company: "Oliveira Transportes",
-      text: "A migração da contabilidade foi tranquila e rápida. Recomendo os serviços da Cyrino!"
+      text: "A migração da contabilidade foi tranquila e rápida. Recomendo os serviços da Cyrino!",
+      rating: 5,
+      date: "há 2 semanas"
     }
   ];
 
@@ -252,25 +261,50 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto h-full">
             {testimonials.map((testimonial, index) => (
               <Card
                 key={index}
-                className="bg-white animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="h-full flex flex-col bg-gradient-to-br from-white to-secondary/5 backdrop-blur-sm border-0 hover-lift animate-slide-up shadow-strong border-t-4 border-secondary/30"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground mb-4 italic leading-relaxed">
+                <CardContent className="pt-6 flex flex-col flex-1">
+                  {/* Ícone decorativo */}
+                  <Check
+                    className="h-8 w-8 text-secondary mb-4"
+                  />
+
+                  {/* Avaliação */}
+                  <div className="flex gap-1 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                    ))}
+                  </div>
+
+                  {/* Texto do depoimento */}
+                  <p className="text-foreground/80 mb-6 leading-relaxed flex-1 text-justify">
                     "{testimonial.text}"
                   </p>
-                  <div className="border-t pt-4">
-                    <p className="font-semibold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+
+                  {/* Autor e selo */}
+                  <div className="pt-4 border-t border-secondary/10 mt-auto flex items-center justify-between">
+                    <div>
+                      <p className="font-semibold text-navy-dark">{testimonial.name}</p>
+                      <p className="text-sm text-foreground/60">{testimonial.date}</p>
+                    </div>
+
+                    {/* Selo Google Reviews */}
+                    <img
+                      src={googleBadge}
+                      alt="Avaliação Google"
+                      className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+
         </div>
       </section>
 
