@@ -1,73 +1,56 @@
-# Welcome to your Lovable project
+# Cyrino Contabilidade — Website Oficial
 
-## Project info
+Bem-vindo ao repositório do site da **Cyrino Contabilidade**, um projeto moderno, responsivo e otimizado para apresentar os serviços, diferenciais e valores da empresa de forma clara e profissional.
 
-**URL**: https://lovable.dev/projects/6e5e6ee3-6648-4537-89b0-cdeba8a39923
+🔗 **Preview do site:**  
+https://evan-d-ro.github.io/cyrino-contabilidade/#/
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Tecnologias Utilizadas
 
-**Use Lovable**
+Este projeto foi desenvolvido utilizando:
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6e5e6ee3-6648-4537-89b0-cdeba8a39923) and start prompting.
+- **React**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **shadcn-ui**
+- **Lucide Icons**
+- **React Router**
+- **Componentização moderna + Clean Code**
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 📁 Estrutura do Projeto
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+A organização segue uma estrutura simples e escalável:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+src/
+├── components/ # Componentes reutilizáveis
+├── pages/ # Páginas principais (Home, Serviços, Contato, etc.)
+├── assets/ # Imagens, ícones e mídias
+├── hooks/ # Hooks personalizados
+├── lib/ # Utilidades e helpers
+├── styles/ # Estilos globais (quando necessário)
+└── main.tsx # Entrada do app
 
-Follow these steps:
+
+---
+
+## 🛠️ Como rodar o projeto localmente
+
+Certifique-se de ter **Node.js** instalado.
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Clone o repositório
+git clone <SEU_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Acesse a pasta do projeto
+cd cyrino-contabilidade
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Instale as dependências
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Inicie o servidor de desenvolvimento
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/6e5e6ee3-6648-4537-89b0-cdeba8a39923) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
