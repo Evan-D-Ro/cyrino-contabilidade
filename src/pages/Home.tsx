@@ -119,8 +119,13 @@ const Home = () => {
             </h1>
             <p className="text-lg md:text-xl mb-8 opacity-95 animate-fade-in leading-relaxed">
               Aqui, a contabilidade fala a sua língua.
-              A gente explica, orienta e cuida dos seus números pra você ter tempo e paz pra focar no que realmente faz sua empresa avançar.
+              <span className="block md:inline">
+                {/* espaço que só aparece no desktop */}
+                <span className="hidden md:inline">&nbsp;</span>
+                A gente explica, orienta e cuida dos seus números pra você ter tempo e paz pra focar no que realmente faz sua empresa avançar.
+              </span>
             </p>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
               <Button
                 size="lg"
@@ -166,8 +171,12 @@ const Home = () => {
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-foreground">
               Nossos Principais Serviços
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Soluções contábeis completas para o crescimento do seu negócio
+            <p className="text-lg md:text-xl mb-8 opacity-95 animate-fade-in leading-relaxed">
+              Soluções contábeis completas
+              <span className="block md:inline">
+                <span className="hidden md:inline">&nbsp;</span>
+                para o crescimento do seu negócio
+              </span>
             </p>
           </div>
 
@@ -207,7 +216,7 @@ const Home = () => {
 
           <div className="text-center mb-16">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4 text-foreground">
-              O que faz a Cyrino ser diferente não é o que a gente faz.<br />
+              O que faz a Cyrino ser diferente não é o que a gente faz...<br />
               <span className="text-accent">É como a gente explica o que faz.</span>
             </h2>
 
@@ -362,8 +371,12 @@ const Home = () => {
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
               O Que Dizem Nossos Clientes
             </h2>
-            <p className="text-lg opacity-90 max-w-2xl mx-auto">
-              Depoimentos de quem confia na Cyrino Contabilidade
+            <p className="text-lg md:text-xl mb-8 opacity-95 animate-fade-in leading-relaxed">
+              Depoimentos de quem confia na
+              <span className="block md:inline">
+                <span className="hidden md:inline">&nbsp;</span>
+                Cyrino Contabilidade
+              </span>
             </p>
           </div>
 

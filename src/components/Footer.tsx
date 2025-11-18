@@ -17,7 +17,9 @@ const Footer = () => {
               className="h-12 w-auto mb-4"
             />
             <p className="text-sm opacity-90">
-              Transforme sua contabilidade em vantagem competitiva. Atendimento personalizado e soluções digitais.
+              A Cyrino Contabilidade nasceu pra simplificar o que é técnico e aproximar o que é humano.
+Aqui, contabilidade é explicada com clareza, feita com cuidado e guiada por propósito.
+
             </p>
             <div className="flex gap-4 pt-2">
               <a 
@@ -54,9 +56,15 @@ const Footer = () => {
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
+              
               <li>
-                <Link to="/abrir-empresa" className="text-sm hover:text-primary transition-colors opacity-90 hover:opacity-100">
-                  Abrir Empresa
+                <Link to="/#" className="text-sm hover:text-primary transition-colors opacity-90 hover:opacity-100">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/sobre" className="text-sm hover:text-primary transition-colors opacity-90 hover:opacity-100">
+                  Sobre Nós
                 </Link>
               </li>
               <li>
@@ -69,11 +77,7 @@ const Footer = () => {
                   Conteúdos
                 </Link>
               </li>
-              <li>
-                <Link to="/sobre" className="text-sm hover:text-primary transition-colors opacity-90 hover:opacity-100">
-                  Sobre Nós
-                </Link>
-              </li>
+              
               <li>
                 <Link to="/contato" className="text-sm hover:text-primary transition-colors opacity-90 hover:opacity-100">
                   Contato

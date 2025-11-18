@@ -170,7 +170,7 @@ const Solucoes = () => {
                     className="w-full group/btn"
                     asChild
                   >
-                    <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/551832657176" target="_blank" rel="noopener noreferrer">
                     <FaWhatsapp className="!w-6 !h-6" />
                       Falar com um Contador
                       <ArrowUpRight className="ml-2 h-4 w-4 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
@@ -205,7 +205,7 @@ const Solucoes = () => {
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold"
                 asChild
               >
-                <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/551832657176" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="!w-6 !h-6" />
                   Falar no WhatsApp
                 </a>
