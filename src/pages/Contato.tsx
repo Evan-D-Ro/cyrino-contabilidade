@@ -255,7 +255,7 @@ const Contato = () => {
                     asChild
                   >
                     <a
-                      href="https://wa.me/5518999999999"
+                      href="https://wa.me/551832657176"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

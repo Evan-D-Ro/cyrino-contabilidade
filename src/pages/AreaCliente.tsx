@@ -121,7 +121,7 @@ const AreaCliente = () => {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground" asChild>
-                    <a href="https://wa.me/5518999999999" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/551832657176" target="_blank" rel="noopener noreferrer">
                       WhatsApp
                     </a>
                   </Button>
