@@ -92,7 +92,7 @@ const AreaCliente = () => {
       {/* ----------------------------------------------------- */}
 
       {/* Info Section (Mantido Original) */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-background ">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <Card className="border-2 border-primary mb-12">
@@ -303,7 +303,7 @@ const AreaCliente = () => {
       </section>
 
       {/* Security Notice (Mantido Original) */}
-      <section className="py-12 bg-secondary text-secondary-foreground">
+      <section className="py-12 bg-secondary text-secondary-foreground border-b-4 border-primary">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <Lock className="h-12 w-12 mx-auto mb-4 opacity-90" />
