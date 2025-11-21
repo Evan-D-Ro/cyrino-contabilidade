@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Youtube } from "lucide-react";
 import logoImage from "@/assets/office-image.png";
 
 const Footer = () => {
@@ -11,43 +11,43 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <img 
-              src={logoImage} 
-              alt="Cyrino Contabilidade" 
+            <img
+              src={logoImage}
+              alt="Cyrino Contabilidade"
               className="h-12 w-auto mb-4"
             />
             <p className="text-sm opacity-90">
               A Cyrino Contabilidade nasceu pra simplificar o que é técnico e aproximar o que é humano.
-Aqui, contabilidade é explicada com clareza, feita com cuidado e guiada por propósito.
+              Aqui, contabilidade é explicada com clareza, feita com cuidado e guiada por propósito.
 
             </p>
             <div className="flex gap-4 pt-2">
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/CyrinoContabilidade/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook size={20} />
               </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/cyrinocontabilidade/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={20} />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <a
+                href="https://www.youtube.com/@CyrinoContabilidade"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
-                aria-label="LinkedIn"
+                aria-label="Youtube"
               >
-                <Linkedin size={20} />
+                <Youtube size={20} />
               </a>
             </div>
           </div>
@@ -56,7 +56,7 @@ Aqui, contabilidade é explicada com clareza, feita com cuidado e guiada por pro
           <div>
             <h3 className="font-heading font-semibold text-lg mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
-              
+
               <li>
                 <Link to="/#" className="text-sm hover:text-primary transition-colors opacity-90 hover:opacity-100">
                   Home
@@ -77,7 +77,7 @@ Aqui, contabilidade é explicada com clareza, feita com cuidado e guiada por pro
                   Conteúdos
                 </Link>
               </li>
-              
+
               <li>
                 <Link to="/contato" className="text-sm hover:text-primary transition-colors opacity-90 hover:opacity-100">
                   Contato
@@ -117,12 +117,7 @@ Aqui, contabilidade é explicada com clareza, feita com cuidado e guiada por pro
                   (18) 3265-7176
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <Mail size={18} className="flex-shrink-0 text-primary" />
-                <a href="mailto:contato@cyrinocontabilidade.com.br" className="opacity-90 hover:text-primary transition-colors">
-                  contato@cyrinocontabilidade.com.br
-                </a>
-              </li>
+
               <li className="flex items-start gap-2">
                 <Clock size={18} className="flex-shrink-0 mt-0.5 text-primary" />
                 <span className="opacity-90">

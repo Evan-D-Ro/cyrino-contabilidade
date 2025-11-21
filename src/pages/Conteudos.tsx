@@ -3,8 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight, FileText } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
+import { useEffect } from "react";
 
 const Conteudos = () => {
+
+  const handleOpenWidget = () => {
+    const hiddenTrigger = document.getElementById('hidden-widget-trigger');
+    if (hiddenTrigger) {
+      hiddenTrigger.click(); // Simula o clique no elemento que o script já "pegou"
+    } else {
+      console.error("Gatilho do widget não encontrado no index.html");
+    }
+  };
+
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
@@ -120,8 +131,10 @@ const Conteudos = () => {
         </div>
       </section>
 
+
+
       {/* Lead Capture Section */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-primary">
         <div className="container mx-auto px-4">
           <Card className="max-w-3xl mx-auto border-2 border-primary">
             <CardContent className="p-8 md:p-12 text-center">
@@ -133,55 +146,19 @@ const Conteudos = () => {
                   Receba um E-book Exclusivo
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Preencha o formulário abaixo e receba gratuitamente em seu e-mail nosso e-book com dicas contábeis exclusivas para o seu negócio.
+                  Clique no botão abaixo, preencha o formulário e receba gratuitamente em seu whatsapp nosso e-book com dicas contábeis exclusivas para o seu negócio.
                 </p>
               </div>
 
-              <form className="flex flex-col gap-4 max-w-md mx-auto text-left">
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    Nome
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="Seu nome completo"
-                    className="w-full px-4 py-3 rounded-lg border border-input focus:outline-none focus:ring-2 focus:ring-primary"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    E-mail
-                  </label>
-                  <input
-                    type="email"
-                    placeholder="Seu melhor e-mail"
-                    className="w-full px-4 py-3 rounded-lg border border-input focus:outline-none focus:ring-2 focus:ring-primary"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    Telefone
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="(00) 00000-0000"
-                    className="w-full px-4 py-3 rounded-lg border border-input focus:outline-none focus:ring-2 focus:ring-primary"
-                    required
-                  />
-                </div>
-
-                <Button
-                  size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 font-semibold text-lg mt-4"
-                  type="submit"
-                >
-                  Receber E-book
-                </Button>
-              </form>
+              <Button
+                size="lg"
+                // REMOVIDA A CLASSE: h-widget-trigger (para não confundir)
+                // ADICIONADO: onClick
+                onClick={handleOpenWidget}
+                className="w-full bg-primary hover:bg-primary/90 font-semibold text-lg mt-4 max-w-md"
+              >
+                Receber E-book
+              </Button>
 
               <p className="text-xs text-muted-foreground mt-4 text-center">
                 Seus dados estão seguros. O e-book será enviado automaticamente para o e-mail informado.
@@ -189,10 +166,10 @@ const Conteudos = () => {
             </CardContent>
           </Card>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section */}
-      <section className="py-20 bg-secondary text-secondary-foreground border-b-4 border-primary">
+      < section className="py-20 bg-secondary text-secondary-foreground border-b-4 border-primary" >
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
@@ -212,8 +189,8 @@ const Conteudos = () => {
             </Button>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

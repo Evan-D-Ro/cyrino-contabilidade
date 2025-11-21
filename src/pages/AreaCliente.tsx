@@ -1,11 +1,79 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Lock, FileText, Download, CreditCard, Calendar, HelpCircle } from "lucide-react";
+import { Link } from "react-router-dom"; // Importante para o link interno
+import {
+  Lock,
+  FileText,
+  Download,
+  CreditCard,
+  Calendar,
+  HelpCircle,
+  Calculator,
+  BookOpen,
+  FolderOpen,
+  ExternalLink,
+  ArrowRight,
+  Building2
+} from "lucide-react";
 
 const AreaCliente = () => {
+
+  // Novos botões baseados na sua imagem e solicitação
+  const systemButtons = [
+    {
+      category: "Departamento Fiscal",
+      title: "SIEG - XML das Notas",
+      icon: FileText,
+      url: "https://auth.sieg.com/login", // Substitua pelo link real
+      external: true,
+      color: "bg-[#E06E28] hover:bg-[#C55E1F]" // Laranja da imagem
+    },
+    {
+      category: "Portal do Cliente",
+      title: "ONVIO Portal do Cliente",
+      icon: Lock,
+      url: "https://onvio.com.br/clientcenter/pt/auth?r=%2Fhome",
+      external: true,
+      color: "bg-[#E06E28] hover:bg-[#C55E1F]"
+    },
+    {
+      category: "MEI",
+      title: "Cálculo Declaração IR MEI",
+      icon: Calculator,
+      url: "https://docs.google.com/spreadsheets/d/1LyfDch46blPsEmymso94t3ZaRJxMTpWD/edit?usp=sharing&ouid=115327238397815677828&rtpof=true&sd=true", // Link da calculadora
+      external: true,
+      color: "bg-[#E06E28] hover:bg-[#C55E1F]"
+    },
+    {
+      category: "Gestão",
+      title: "Livro Caixa",
+      icon: BookOpen,
+      url: "https://docs.google.com/spreadsheets/d/1oO3vFRLYKp9QnrOlQaXoZ9RhQ9Adn4Jc/edit?usp=sharing&ouid=106590145691195419619&rtpof=true&sd=true", // Link do Livro Caixa
+      external: true,
+      color: "bg-[#E06E28] hover:bg-[#C55E1F]"
+    },
+    {
+      category: "Contábil",
+      title: "Banco Cora",
+      icon: Building2,
+      url: "https://lp.cora.com.br/coraliados/?code=cyrino-contabilidade&n=Cyrino%20Contabilidade%20Ltda",
+      external: true,
+      color: "bg-[#E06E28] hover:bg-[#C55E1F]"
+    },
+
+    {
+      category: "Arquivos",
+      title: "Outros Arquivos", // Botão solicitado para a página interna
+      icon: FolderOpen,
+      url: "https://cyrinocontabilidade.com.br/arquivos", // Rota interna
+      external: true,
+      color: "bg-[#E06E28] hover:bg-[#C55E1F]" // Diferenciei um pouco para destacar que é interno
+    }
+  ];
+
   return (
     <div className="min-h-screen pt-20">
-      {/* Hero Section */}
+      {/* Hero Section (Mantido) */}
       <section className="bg-gradient-to-br from-primary via-orange-500 to-secondary text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
@@ -20,7 +88,10 @@ const AreaCliente = () => {
         </div>
       </section>
 
-      {/* Info Section */}
+
+      {/* ----------------------------------------------------- */}
+
+      {/* Info Section (Mantido Original) */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -51,7 +122,7 @@ const AreaCliente = () => {
               </CardContent>
             </Card>
 
-            {/* Features Grid */}
+            {/* Features Grid (Mantido Original) */}
             <div className="mb-12">
               <h3 className="font-heading text-2xl font-bold mb-8 text-center text-foreground">
                 O Que Você Pode Fazer na Área do Cliente
@@ -110,7 +181,96 @@ const AreaCliente = () => {
               </div>
             </div>
 
-            {/* Help Section */}
+            {/* --- NOVA SEÇÃO: BOTÕES DOS SISTEMAS (Redesenhada) --- */}
+            <section className="py-16 bg-slate-50 border-b">
+              <div className="container mx-auto px-4">
+                <div className="max-w-6xl mx-auto">
+                  <div className="text-center mb-10">
+                    <h2 className="font-heading text-2xl md:text-3xl font-bold text-navy-dark">
+                      Acesso Rápido aos Sistemas
+                    </h2>
+                    <p className="text-muted-foreground mt-2">
+                      Selecione a ferramenta que deseja acessar
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {systemButtons.map((btn, index) => (
+                      <div key={index} className="h-full group">
+                        {/* Wrapper Condicional para Link Externo ou Interno */}
+                        {btn.external ? (
+                          <a
+                            href={btn.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block h-full"
+                          >
+                            <Card className="h-full border border-slate-200 bg-white shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:border-orange-500/30 group-hover:-translate-y-1 overflow-hidden relative">
+                              {/* Barra colorida lateral no hover */}
+                              <div className="absolute left-0 top-0 bottom-0 w-1 bg-orange-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+
+                              <CardContent className="p-8 flex flex-col items-start justify-between h-full">
+                                <div className="w-full">
+                                  <div className="flex justify-between items-start mb-6">
+                                    {/* Ícone com fundo suave */}
+                                    <div className="h-14 w-14 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shadow-inner group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
+                                      <btn.icon className="h-7 w-7" />
+                                    </div>
+                                    <ExternalLink className="h-5 w-5 text-slate-300 group-hover:text-orange-400 transition-colors" />
+                                  </div>
+
+                                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1 block">
+                                    {btn.category}
+                                  </span>
+                                  <h3 className="font-heading text-xl font-bold text-slate-800 group-hover:text-orange-600 transition-colors">
+                                    {btn.title}
+                                  </h3>
+                                </div>
+
+                                <div className="mt-6 flex items-center text-sm font-medium text-orange-600 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                                  Acessar agora <ArrowRight className="ml-2 h-4 w-4" />
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </a>
+                        ) : (
+                          <Link to={btn.url} className="block h-full">
+                            <Card className="h-full border border-slate-200 bg-white shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:border-navy-dark/30 group-hover:-translate-y-1 overflow-hidden relative">
+                              {/* Barra colorida lateral no hover (Azul para interno) */}
+                              <div className="absolute left-0 top-0 bottom-0 w-1 bg-navy-dark opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+
+                              <CardContent className="p-8 flex flex-col items-start justify-between h-full">
+                                <div className="w-full">
+                                  <div className="flex justify-between items-start mb-6">
+                                    {/* Ícone Azul para diferenciar interno */}
+                                    <div className="h-14 w-14 rounded-xl bg-slate-100 text-navy-dark flex items-center justify-center shadow-inner group-hover:bg-navy-dark group-hover:text-white transition-colors duration-300">
+                                      <btn.icon className="h-7 w-7" />
+                                    </div>
+                                  </div>
+
+                                  <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1 block">
+                                    {btn.category}
+                                  </span>
+                                  <h3 className="font-heading text-xl font-bold text-slate-800 group-hover:text-navy-dark transition-colors">
+                                    {btn.title}
+                                  </h3>
+                                </div>
+
+                                <div className="mt-6 flex items-center text-sm font-medium text-navy-dark opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                                  Ver arquivos <ArrowRight className="ml-2 h-4 w-4" />
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </Link>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Help Section (Mantido Original) */}
             <Card className="bg-muted">
               <CardContent className="p-8">
                 <h3 className="font-heading text-xl font-bold mb-4 text-center text-foreground">
@@ -142,7 +302,7 @@ const AreaCliente = () => {
         </div>
       </section>
 
-      {/* Security Notice */}
+      {/* Security Notice (Mantido Original) */}
       <section className="py-12 bg-secondary text-secondary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">

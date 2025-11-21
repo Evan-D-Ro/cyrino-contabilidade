@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import whatsapp from "@/assets/WhatsApp.png";
 
+import InputMask from "react-input-mask";
+
 const Contato = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,24 +29,38 @@ const Contato = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    // Limite de caracteres da mensagem
+    if (name === "message" && value.length > 300) return;
+
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success("Mensagem enviada com sucesso! Em breve entraremos em contato.");
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-      setIsSubmitting(false);
-    }, 1500);
+    // Limite de caracteres (já garantido no textarea)
+    const messageLimited = formData.message.slice(0, 300);
+
+    // Texto sem emojis problemáticos
+    const text =
+      `*Solicitação de contato*:\n\n` +
+      `Nome: ${formData.name}\n` +
+      `E-mail: ${formData.email}\n` +
+      `Assunto: ${formData.subject}\n\n` +
+      `${messageLimited}`;
+
+    const encoded = encodeURIComponent(text);
+
+    // Número oficial da empresa
+    const whatsappNumber = "551832657176";
+
+    // Redirecionar para o WhatsApp com a mensagem preenchida
+    window.open(`https://wa.me/${whatsappNumber}?text=${encoded}`, "_blank");
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   const contactInfo = [
     {
@@ -56,14 +72,8 @@ const Contato = () => {
     {
       icon: Phone,
       title: "Telefone",
-      content: "(18) 3265-7176",
+      content: `(18) 3265-7176 ${'\n'} Whatsapp Oficial`,
       link: "tel:+551832657176"
-    },
-    {
-      icon: Mail,
-      title: "E-mail",
-      content: "contato@cyrinocontabilidade.com.br",
-      link: "mailto:contato@cyrinocontabilidade.com.br"
     },
     {
       icon: Clock,
@@ -92,7 +102,7 @@ const Contato = () => {
       {/* Contact Info Cards */}
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {contactInfo.map((info, index) => (
               <Card
                 key={index}
@@ -139,6 +149,7 @@ const Contato = () => {
                   Envie uma Mensagem
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
+
                   <div>
                     <Label htmlFor="name">Nome Completo *</Label>
                     <Input
@@ -162,19 +173,6 @@ const Contato = () => {
                       onChange={handleChange}
                       required
                       placeholder="seu@email.com"
-                      className="mt-2"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="phone">Telefone</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="(00) 00000-0000"
                       className="mt-2"
                     />
                   </div>
@@ -204,6 +202,9 @@ const Contato = () => {
                       rows={5}
                       className="mt-2"
                     />
+                    <div className="text-right text-sm text-muted-foreground">
+                      {formData.message.length}/300
+                    </div>
                   </div>
 
                   <Button
@@ -214,7 +215,7 @@ const Contato = () => {
                     {isSubmitting ? "Enviando..." : (
                       <>
                         <Send className="mr-2 h-4 w-4" />
-                        Enviar Mensagem
+                        Enviar pelo WhatsApp
                       </>
                     )}
                   </Button>
@@ -293,7 +294,7 @@ const Contato = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground mb-1">CRC:</p>
-                  <p className="text-muted-foreground">1SP 289664</p>
+                  <p className="text-muted-foreground">1SP 289664 | 2SP 038081</p>
                 </div>
               </div>
             </CardContent>

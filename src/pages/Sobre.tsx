@@ -131,21 +131,24 @@ const Sobre = () => {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {values.map((value, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-4 p-6 bg-background rounded-lg border border-border hover:border-primary transition-all animate-fade-in"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
-                    <value.icon className="h-6 w-6 text-primary" />
+                <div className=" flex flex-col gap-4 pb-6 pl-6 pr-6 bg-background rounded-lg border border-border hover:border-primary transition-all animate-fade-in">
+                  <div
+                    key={index}
+                    className="flex items-center gap-4 pt-6"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
+                    <div className="p-3 bg-primary/10 rounded-lg flex-shrink-0">
+                      <value.icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-semibold mb-2 text-foreground">{value.title}</h4>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-heading font-semibold mb-2 text-foreground">{value.title}</h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
-                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
+
           </div>
         </div>
       </section>
