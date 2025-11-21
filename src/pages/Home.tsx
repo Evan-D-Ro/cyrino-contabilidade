@@ -521,7 +521,7 @@ const Home = () => {
                 </CardContent>
               </a>
             </Card>
-            <a href="https://cyrinocontabilidade.com.br/arquivos" target="_blank">
+            <a href="/conteudos" target="_blank">
               <Card className="shadow-md hover:shadow-xl transition-all duration-300 border-none bg-background/60 backdrop-blur">
                 <CardContent className="p-6 text-center md:text-left">
                   <div className="text-4xl mb-4">📘</div>
