@@ -215,7 +215,7 @@ const Contato = () => {
                     {isSubmitting ? "Enviando..." : (
                       <>
                         <Send className="mr-2 h-4 w-4" />
-                        Enviar pelo WhatsApp
+                        Enviar
                       </>
                     )}
                   </Button>
