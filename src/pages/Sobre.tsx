@@ -2,8 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Target, Eye, Heart, Award, Users, Lightbulb, Shield } from "lucide-react";
-import rodrigoCyrino from "@/assets/rodrigo-cyrino.png";
-import teamMeeting from "@/assets/team-meeting.jpg";
+import rodrigoCyrino from "@/assets/rodrigo-cyrino.jpg";
+import about from "@/assets/about.jpg";
 
 const Sobre = () => {
   const values = [
@@ -66,7 +66,7 @@ const Sobre = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div className="order-2 lg:order-1">
               <img
-                src={teamMeeting}
+                src={about}
                 alt="Equipe Cyrino Contabilidade"
                 className="rounded-2xl shadow-2xl w-full h-auto"
               />
@@ -167,12 +167,12 @@ const Sobre = () => {
             </div>
 
             <Card className="overflow-hidden hover:shadow-2xl transition-all">
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
-                <div className="md:col-span-2 bg-gradient-to-br from-primary to-secondary p-8 flex items-center justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-0 border-4 border-primary">
+                <div className="md:col-span-2 bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                   <img
                     src={rodrigoCyrino}
                     alt="Rodrigo Cyrino Ribeiro"
-                    className="rounded-full w-48 h-48 object-cover border-4 border-white shadow-xl"
+                    className="w-96 h-96 object-cover shadow-xl"
                   />
                 </div>
                 <CardContent className="md:col-span-3 p-8 flex flex-col justify-center">

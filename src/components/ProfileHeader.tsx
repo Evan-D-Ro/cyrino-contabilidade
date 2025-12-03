@@ -1,11 +1,11 @@
 import { Facebook, Instagram, Youtube, Phone } from "lucide-react";
-import cyrinoProfile from "@/assets/cyrino-profile.jpg";
+import cyrinoProfile from "@/assets/rodrigo-cyrino.jpg";
 
 const ProfileHeader = () => {
     return (
         <div className=" px-4 text-center relative z-10">
             <div className="inline-block mb-6">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white/30 shadow-card-hover mx-auto">
+                <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/30 shadow-card-hover mx-auto">
                     <img
                         src={cyrinoProfile}
                         alt="Cyrino Contabilidade"

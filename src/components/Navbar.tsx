@@ -9,12 +9,12 @@ const Navbar = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "Sobre", path: "/sobre" },
+    { name: "Início", path: "/" },
+    { name: "A Cyrino", path: "/sobre" },
     { name: "Abrir Empresa", path: "/abrir-empresa" },
-    { name: "Soluções", path: "/solucoes" },
+    { name: "Serviços", path: "/solucoes" },
     { name: "Conteúdos", path: "/conteudos" },
-    { name: "Contato", path: "/contato" },
+    { name: "Atendimento", path: "/contato" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -32,15 +32,15 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          {/* Desktop Navigation - MUDANÇA AQUI: trocado lg:flex para xl:flex */}
+          <div className="hidden xl:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`relative text-sm font-medium transition-colors hover:text-primary ${isActive(link.path)
-                  ? "text-primary"
-                  : "text-foreground"
+                    ? "text-primary"
+                    : "text-foreground"
                   } after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left ${isActive(link.path) ? "after:scale-x-100" : ""
                   }`}
               >
@@ -49,8 +49,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* CTA Buttons - MUDANÇA AQUI: trocado lg:flex para xl:flex */}
+          <div className="hidden xl:flex items-center gap-3">
             <Button
               variant="outline"
               asChild
@@ -61,27 +61,27 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Fale Conosco
+                Consultoria Gratuita
               </a>
             </Button>
             <Button asChild>
-              <Link to="/area-cliente">Área do Cliente</Link>
+              <Link to="/area-cliente">Portal do Cliente</Link>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - MUDANÇA AQUI: trocado lg:hidden para xl:hidden */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md hover:bg-muted transition-colors"
+            className="xl:hidden p-2 rounded-md hover:bg-muted transition-colors"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - MUDANÇA AQUI: trocado lg:hidden para xl:hidden */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-border animate-fade-in">
+          <div className="xl:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
@@ -89,8 +89,8 @@ const Navbar = () => {
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className={`px-4 py-2 rounded-md transition-colors ${isActive(link.path)
-                    ? "bg-primary text-primary-foreground font-medium"
-                    : "hover:bg-muted"
+                      ? "bg-primary text-primary-foreground font-medium"
+                      : "hover:bg-muted"
                     }`}
                 >
                   {link.name}
@@ -107,12 +107,12 @@ const Navbar = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Fale Conosco
+                    Consultoria Gratuita
                   </a>
                 </Button>
                 <Button className="w-full" asChild>
                   <Link to="/area-cliente" onClick={() => setIsOpen(false)}>
-                    Área do Cliente
+                    Portal do Cliente
                   </Link>
                 </Button>
               </div>

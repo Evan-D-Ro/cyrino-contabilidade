@@ -19,11 +19,13 @@ import {
   Heart,
   ExternalLink
 } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+import heroBackground from "@/assets/hero-background.webp";
 import googleBadge from "@/assets/google-review.webp";
 import artInstagram from "@/assets/art-instagram.webp";
 import YoutubeVideos from "@/components/YoutubeVideos";
 import TestimonialItem from "@/components/TestimonialItem";
+import ProgressiveImage from "@/components/ProgressiveImageProps";
+
 // --- SUB-COMPONENTE ---
 
 const Home = () => {
@@ -173,15 +175,36 @@ const Home = () => {
     <div className="min-h-screen">
 
       {/* Hero Section */}
-      <section
-        className="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(135deg, rgba(255, 96, 55, 0.95), rgba(13, 39, 80, 0.95)), url(${heroBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
+      <section className="relative pt-32 pb-20 lg:pt-56 lg:pb-32 overflow-hidden">
+        {/*
+        --- CAMADA 1: O Background Progressivo ---
+        Esta div ocupa todo o espaço e contém a imagem.
+        Substituímos as classes de background CSS (bg-cover, bg-center)
+        pelas classes de objeto de imagem (object-cover, object-center).
+      */}
+        <div className="absolute inset-0 z-0">
+          <ProgressiveImage
+            src={heroBackground}
+            // ⚠️ ATENÇÃO: Crie esta imagem na pasta public ⚠️
+            placeholder="/hero-bg-blur.webp"
+            // Aplicamos as regras de posicionamento que estavam no CSS aqui na imagem
+            className="w-full h-full object-cover object-[75%_top] lg:object-[center_top]"
+          />
+        </div>
+
+        {/*
+        --- CAMADA 2: O Overlay de Gradiente ---
+        Como removemos o backgroundImage: linear-gradient(...) da section principal,
+        precisamos recriá-lo aqui como uma camada por cima da imagem, mas abaixo do conteúdo.
+      */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            background: `linear-gradient(135deg, rgba(255, 96, 55, 0.55), rgba(13, 39, 80, 0.95))`,
+          }}
+        ></div>
+
+        {/* --- CONTEÚDO (Mantido igual, com z-10 para ficar por cima) --- */}
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-up leading-tight">
@@ -190,8 +213,10 @@ const Home = () => {
             <p className="text-lg md:text-xl mb-8 opacity-95 animate-fade-in leading-relaxed">
               Aqui, a contabilidade fala a sua língua.
               <span className="block md:inline">
-                <span className="hidden md:inline">&nbsp;</span>
-                A gente explica, orienta e cuida dos seus números pra você ter tempo e paz pra focar no que realmente faz<br /> sua empresa avançar.
+                <span className="hidden md:inline">&nbsp;</span>A gente explica,
+                orienta e cuida dos seus números pra você ter tempo e paz pra
+                focar no que realmente faz
+                <br /> sua empresa avançar.
               </span>
             </p>
 
@@ -217,18 +242,19 @@ const Home = () => {
                 className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-secondary font-semibold text-lg px-8 py-6"
                 asChild
               >
-                <Link to="/contato">
-                  Quero entender meu negócio
-                </Link>
+                <Link to="/contato">Quero entender meu negócio</Link>
               </Button>
             </div>
             <p className="text-white text-sm mt-4 opacity-90">
-              Contabilidade sem enrolação, sem “contabilês” e com resultados reais.
+              Contabilidade sem enrolação, sem “contabilês” e com resultados
+              reais.
             </p>
           </div>
         </div>
-        <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+
+        {/* Elementos decorativos (mantidos com z-index baixo implícito) */}
+        <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl z-0"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl z-0"></div>
       </section>
 
       {/* Services Section */}

@@ -65,7 +65,7 @@ const AreaCliente = () => {
       category: "Arquivos",
       title: "Outros Arquivos", // Botão solicitado para a página interna
       icon: FolderOpen,
-      url: "https://cyrinocontabilidade.com.br/arquivos", // Rota interna
+      url: "/arquivos", // Rota interna
       external: true,
       color: "bg-[#E06E28] hover:bg-[#C55E1F]" // Diferenciei um pouco para destacar que é interno
     }
@@ -79,7 +79,7 @@ const AreaCliente = () => {
           <div className="max-w-3xl mx-auto text-center">
             <Lock className="h-16 w-16 mx-auto mb-6 opacity-90" />
             <h1 className="font-heading text-4xl md:text-5xl font-bold mb-6 animate-fade-in-up">
-              Área do Cliente
+              Portal do Cliente
             </h1>
             <p className="text-lg md:text-xl opacity-95 leading-relaxed">
               Acesse seus documentos, boletos e informações contábeis de forma rápida e segura.
